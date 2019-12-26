@@ -1,62 +1,19 @@
+import 'app.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(App());
+void main() => runApp(MyApp());
 
-class App extends StatelessWidget{
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
       theme: ThemeData(
-        primaryColor: Color(0xFFFB4158),
+        primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),
-    );
-  }
-}
-
-class LoginPage extends StatefulWidget{
-  @override
-  _LoginPageState createState()=> _LoginPageState();
-} 
-
-class _LoginPageState extends State<LoginPage>{
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(children: <Widget>[
-        Text('Logo',
-        style: TextStyle(
-          fontSize: 40.0,
-          fontWeight: FontWeight.bold,
-        ),
-        ),
-        SizedBox(height: 40.0,),
-        Text(
-          "LOGIN",
-          style: TextStyle(
-            fontSize: 32.0,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        SizedBox(height: 40.0,),
-        buildTextField(),
-      ],
-      ),
-    );
-  }
-
-Widget buildTextField(){
-  return TextField(
-    decoration: InputDecoration(
-      hintText: "Email",
-      hintStyle: TextStyle(
-        color: Colors.grey,
-        fontSize: 16.0,
-      ),
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(20.0),
-      )
-      ),
+      home: App(),
     );
   }
 }
